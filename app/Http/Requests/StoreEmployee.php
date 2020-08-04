@@ -13,7 +13,7 @@ class StoreEmployee extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreEmployee extends FormRequest
     public function rules()
     {
         return [
-            //
+            'firstname' => 'required',
+            'lastname' => 'required',
+        ];
+    }
+
+    public  function messages()
+    {
+        return [
+            'firstname'=>'Fistname is required',
+            'lastname'=>'Lastname is required'
         ];
     }
 }

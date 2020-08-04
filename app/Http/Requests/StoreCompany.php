@@ -13,7 +13,7 @@ class StoreCompany extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreCompany extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+        ];
+    }
+
+    public  function messages()
+    {
+        return [
+            'name'=>'Name is required'
         ];
     }
 }

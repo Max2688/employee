@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompany;
+use Intervention\Image\Facades\Image as ImageLib;
 class CompanyController extends Controller
 {
     /**
@@ -14,7 +15,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('company.company',[
+            'companies' => Company::orderBy('name','asc')->paginate(10)
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.create',[
+            'companies'=>[]
+        ]);
     }
 
     /**
@@ -35,7 +40,15 @@ class CompanyController extends Controller
      */
     public function store(StoreCompany $request)
     {
-        //
+
+        ImageLib::make($request->file('logo'))
+            ->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->save(storage_path('app/public').DIRECTORY_SEPARATOR.$request->file('logo')->getClientOriginalName());
+
+        Company::create(['name' => $request->name,'email' => $request->email,'website' => $request->website, 'logo' => $request->file('logo')->getClientOriginalName()]);
+        return redirect()->route('company.index');
     }
 
     /**
@@ -57,7 +70,9 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('company.edit',[
+            'company'=>$company
+        ]);
     }
 
     /**
@@ -69,7 +84,13 @@ class CompanyController extends Controller
      */
     public function update(StoreCompany $request, Company $company)
     {
-        //
+        ImageLib::make($request->file('logo'))
+            ->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->save(storage_path('app/public').DIRECTORY_SEPARATOR.$request->file('logo')->getClientOriginalName());
+        $company->update(['name' => $request->name,'email' => $request->email,'website' => $request->website, 'logo' => $request->file('logo')->getClientOriginalName()]);
+        return redirect()->route('company.index');
     }
 
     /**
@@ -80,6 +101,7 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+        return redirect()->route('company.index');
     }
 }

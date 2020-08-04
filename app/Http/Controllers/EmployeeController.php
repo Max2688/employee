@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Company;
 use App\Employee;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEmployee;
@@ -13,7 +14,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        return view('employee.employee',[
+            'employees' => Employee::orderBy('firstname','asc')->paginate(10)
+        ]);
     }
 
     /**
@@ -23,7 +26,11 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        return view('employee.create',[
+            'employees'=>[],
+            'companies'=> $companies
+        ]);
     }
 
     /**
@@ -34,7 +41,8 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployee $request)
     {
-        //
+        Employee::create($request->all());
+        return redirect()->route('employee.index');
     }
 
     /**
@@ -56,7 +64,11 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        $companies = Company::all();
+        return view('employee.edit',[
+            'employee'=>$employee,
+            'companies'=> $companies
+        ]);
     }
 
     /**
@@ -68,7 +80,8 @@ class EmployeeController extends Controller
      */
     public function update(StoreEmployee $request, Employee $employee)
     {
-        //
+        $employee->update($request->all());
+        return redirect()->route('employee.index');
     }
 
     /**
@@ -79,6 +92,7 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return redirect()->route('employee.index');
     }
 }
