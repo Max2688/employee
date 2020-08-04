@@ -12,7 +12,7 @@ Requirements:
 <li>Use basic Laravel resource controllers with default methods – index, create, store etc.</li>
 <li>Use Laravel’s validation function, using Request classes</li>
 <li>Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page</li>
-<li>Use Laravel make:auth as default Bootstrap-based design theme, but remove ability toregister</li>
+<li>Use Laravel make:auth as default Bootstrap-based design theme, but remove ability to register</li>
 <li>Use Datatables.net library to show table – without server-side rendering</li>
 <li>Use more complicated front-end theme like AdminLTE</li>
 <li>Email notification: send email whenever new company is entered (use Mailgun or Mailtrap)</li>
