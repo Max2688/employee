@@ -25,7 +25,7 @@
                 @forelse( $companies as $key => $company)
 
                     <tr>
-                        <td><img src="{{ asset( 'storage/'.$company->logo ) }}" /></td>
+                        <td><img src="{{ asset(  !empty($company->logo) ? 'storage/'. $company->logo : 'https://via.placeholder.com/100') }}" /></td>
                         <td>{{ $company->name }}</td>
                         <td>{{ $company->email }}</td>
                         <td>{{ $company->website }}</td>

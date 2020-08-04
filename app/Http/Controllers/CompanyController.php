@@ -40,14 +40,24 @@ class CompanyController extends Controller
      */
     public function store(StoreCompany $request)
     {
+        $company = new Company();
 
-        ImageLib::make($request->file('logo'))
-            ->resize(100, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->save(storage_path('app/public').DIRECTORY_SEPARATOR.$request->file('logo')->getClientOriginalName());
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->website = $request->website;
 
-        Company::create(['name' => $request->name,'email' => $request->email,'website' => $request->website, 'logo' => $request->file('logo')->getClientOriginalName()]);
+
+        if($request->hasFile('logo')) {
+            ImageLib::make($request->file('logo'))
+                ->resize(100, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(storage_path('app/public') . DIRECTORY_SEPARATOR . $request->file('logo')->getClientOriginalName());
+            $company->logo = $request->file('logo')->getClientOriginalName();
+        }else{
+            $company->logo = '';
+        }
+        $company->save();
         return redirect()->route('company.index');
     }
 
@@ -84,12 +94,19 @@ class CompanyController extends Controller
      */
     public function update(StoreCompany $request, Company $company)
     {
-        ImageLib::make($request->file('logo'))
-            ->resize(100, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->save(storage_path('app/public').DIRECTORY_SEPARATOR.$request->file('logo')->getClientOriginalName());
-        $company->update(['name' => $request->name,'email' => $request->email,'website' => $request->website, 'logo' => $request->file('logo')->getClientOriginalName()]);
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->website = $request->website;
+        if($request->hasFile('logo')){
+            ImageLib::make($request->file('logo'))
+                ->resize(100, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(storage_path('app/public') . DIRECTORY_SEPARATOR . $request->file('logo')->getClientOriginalName());
+            $company->logo = $request->file('logo')->getClientOriginalName();
+        }
+        $company->save();
+
         return redirect()->route('company.index');
     }
 

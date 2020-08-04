@@ -26,7 +26,6 @@
                     <p>
                         <label for="logo">Logo</label>
                         <input type="file" id="logo" name="logo" class="form-control"   />
-                        <img src="{{ asset( 'storage/'.$company->logo ) }}" />
                     </p>
                     @include('company.partials.form')
                 </form>

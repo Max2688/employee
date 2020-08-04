@@ -1,6 +1,6 @@
 <p>
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="{{ $company->name or '' }}" required />
+    <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="{{ $company->name or '' }}"  />
 </p>
 
 <p>
