@@ -1,20 +1,20 @@
 <p>
-    <label for="name">Fistname</label>
-    <input type="text" id="name" name="firstname" class="form-control" placeholder="Fistname" value="{{ $employee->firstname or '' }}" required />
+    <label for="name">@lang('home.name')</label>
+    <input type="text" id="name" name="firstname" class="form-control" placeholder="@lang('home.name')" value="{{ $employee->firstname or '' }}" required />
 </p>
 
 <p>
-    <label for="last">Lastname</label>
-    <input type="text" id="last" name="lastname" class="form-control" placeholder="Lastname" value="{{ $employee->lastname or '' }}"  required/>
+    <label for="last">@lang('home.lastname')</label>
+    <input type="text" id="last" name="lastname" class="form-control" placeholder="@lang('home.lastname')" value="{{ $employee->lastname or '' }}"  required/>
 </p>
 
 <p>
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="{{ $employee->email or '' }}"  />
+    <label for="email">@lang('home.email')</label>
+    <input type="text" id="email" name="email" class="form-control" placeholder="@lang('home.email')" value="{{ $employee->email or '' }}"  />
 </p>
 <p>
-    <label for="phone">Phone</label>
-    <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" value="{{ $employee->phone or '' }}"  />
+    <label for="phone">@lang('home.phone')</label>
+    <input type="text" id="phone" name="phone" class="form-control" placeholder="@lang('home.phone')" value="{{ $employee->phone or '' }}"  />
 </p>
 <p>
     <label for="company">Company</label>

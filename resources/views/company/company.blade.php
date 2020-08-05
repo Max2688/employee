@@ -14,10 +14,10 @@
             <table  class="table company-table">
                 <thead>
                 <tr role="row">
-                    <th>Изображение</th>
-                    <th>@lang('home.title')</th>
-                    <th>Email</th>
-                    <th>Website</th>
+                    <th>@lang('home.img')</th>
+                    <th>@lang('home.name')</th>
+                    <th>@lang('home.email')</th>
+                    <th>@lang('home.website')</th>
                     <th>@lang('home.action')</th>
                 </tr>
                 </thead>

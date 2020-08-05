@@ -5,7 +5,7 @@
     <div class="container-fluid">
 
         <div class="d-flex justify-content-between margin-bottom20">
-            <span class="box-title align-self-center" ><h3></h3></span>
+            <span class="box-title align-self-center" ><h3>@lang('home.employees')</h3></span>
             <a class="btn btn-primary" href="{{ route('employee.create') }}"><i class="fa fa-plus"></i></a>
         </div>
 
@@ -14,10 +14,10 @@
             <table  class="table employee-table">
                 <thead>
                 <tr role="row">
-                    <th>@lang('home.title')</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                    <th>Phone</th>
+                    <th>@lang('home.name')</th>
+                    <th>@lang('home.lastname')</th>
+                    <th>@lang('home.email')</th>
+                    <th>@lang('home.phone')</th>
                     <th>@lang('home.action')</th>
                 </tr>
                 </thead>

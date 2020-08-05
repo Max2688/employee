@@ -1,8 +1,17 @@
 <?php
 
 return [
-    'companies' => 'Компании',
+    'companies' => 'Companies',
+    'employees' => 'Employees',
 
-    'title' => 'Имя',
-    'action' => 'Действие',
+    'name' => 'Firstname',
+    'lastname' => 'Lastname',
+    'email' => 'Email',
+    'phone' => 'Phone',
+    'website' => 'Website',
+    'img' => 'Image',
+    'action' => 'Action',
+
+    'create' => 'Create',
+    'edit' => 'Edit'
 ];

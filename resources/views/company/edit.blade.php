@@ -8,7 +8,7 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title"><i class="fa fa-pencil"></i> Edit Company</h5>
+                <h5 class="card-title"><i class="fa fa-pencil"></i> @lang('home.edit')</h5>
             </div>
             <div class="card-body">
                 @if ($errors->any())

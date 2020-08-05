@@ -17,7 +17,7 @@
                 </div>
             @endif
             <div class="card-header">
-                <h5 class="card-title">Create employee</h5>
+                <h5 class="card-title">@lang('home.create')</h5>
             </div>
             <div class="card-body">
                 <form class="form-horizontal" id="employee" action="{{ route('employee.store') }}" method="post" >

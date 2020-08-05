@@ -17,7 +17,7 @@
                 </div>
             @endif
             <div class="card-header">
-                <h5 class="card-title"><i class="fa fa-pencil"></i> Edit employee</h5>
+                <h5 class="card-title"><i class="fa fa-pencil"></i> @lang('home.edit')</h5>
             </div>
             <div class="card-body">
                 <form class="form-horizontal" id="employee" action="{{ route('employee.update', $employee) }}" method="post">

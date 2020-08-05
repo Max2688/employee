@@ -1,14 +1,14 @@
 <p>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="{{ $company->name or '' }}"  />
+    <label for="name">@lang('home.name')</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="@lang('home.name')" value="{{ $company->name or '' }}"  />
 </p>
 
 <p>
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="{{ $company->email or '' }}"  />
+    <label for="email">@lang('home.email')</label>
+    <input type="text" id="email" name="email" class="form-control" placeholder="@lang('home.email')" value="{{ $company->email or '' }}"  />
 </p>
 
 <p>
-    <label for="website">Website</label>
-    <input type="text" id="website" name="website" class="form-control" placeholder="Website" value="{{ $company->website or '' }}"  />
+    <label for="website">@lang('home.website')</label>
+    <input type="text" id="website" name="website" class="form-control" placeholder="@lang('home.website')" value="{{ $company->website or '' }}"  />
 </p>
