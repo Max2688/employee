@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Providers;
-
+use App\Company;
 use Illuminate\Support\ServiceProvider;
-
+use App\Observers\CompanyObserver;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Company::observe(CompanyObserver::class);
     }
 
     /**

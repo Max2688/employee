@@ -11,7 +11,7 @@
 
         <div class="card border-0">
 
-            <table  class="table automate-table">
+            <table  class="table employee-table">
                 <thead>
                 <tr role="row">
                     <th>@lang('home.title')</th>
@@ -54,9 +54,7 @@
             </table>
 
         </div>
-        <div class="pagination pull-right dashboard-pagination">
-            {{ $employees->links() }}
-        </div>
+
     </div>
 
 

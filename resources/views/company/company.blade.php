@@ -11,7 +11,7 @@
 
         <div class="card border-0">
 
-            <table  class="table automate-table">
+            <table  class="table company-table">
                 <thead>
                 <tr role="row">
                     <th>Изображение</th>
@@ -53,9 +53,6 @@
                     </tbody>
             </table>
 
-        </div>
-        <div class="pagination pull-right dashboard-pagination">
-            {{ $companies->links() }}
         </div>
     </div>
 
