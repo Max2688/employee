@@ -6,7 +6,7 @@ $factory->define(App\Employee::class, function (Faker $faker) {
     return [
         'firstname' => $faker->name,
         'lastname' => $faker->lastName,
-        'company_id' => 19,
+        'company_id' => 1,
         'email' => $faker->unique()->safeEmail,
         'phone' => $faker->phoneNumber,
     ];
